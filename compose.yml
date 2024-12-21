@@ -1,0 +1,47 @@
+services:
+  fastapi:
+    container_name: fastapi
+    build:
+      context: ./backend/fastapi
+      dockerfile: Dockerfile
+    ports:
+      - 8000:8000
+    volumes:
+      - ./backend/fastapi:/app
+    networks:
+      - imane-network
+
+  ollama:
+    container_name: ollama
+    build:
+      context: ./backend/ollama
+      dockerfile: Dockerfile
+    ports:
+      - 11434:11434
+    volumes:
+      - imane-vol:/ollama
+    networks:
+      - imane-network
+    entrypoint: ["/usr/bin/bash", "/wait-for-fastapi.sh", "/pull-model.sh"]
+
+  frontend:
+    container_name: frontend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    tty: true
+    networks:
+      - imane-network
+
+networks:
+  imane-network:
+    driver: bridge
+
+volumes:
+  imane-vol:
+    driver: local

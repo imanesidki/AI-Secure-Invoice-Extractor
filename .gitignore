@@ -1,0 +1,4 @@
+.DS_Store
+/frontend/node_modules
+/frontend/.next
+/backend/fastapi/__pycache__
