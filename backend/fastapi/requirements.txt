@@ -1,0 +1,9 @@
+fastapi
+fastapi-cli
+requests
+uvicorn
+pillow
+paddlepaddle 
+paddleocr
+colorama
+python-multipart
