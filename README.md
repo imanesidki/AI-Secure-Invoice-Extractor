@@ -1,15 +1,15 @@
 # AI-Secure-Invoice-Extractor
 A Dockerized full-stack web app that uses the llama3 LLM for secure extraction of structured data from invoices and receipts.<br>All data processing takes place on the server (or locally if self-hosted), ensuring that sensitive information never leaves your controlled environment.<br>
 
-#### Features
+### Features
 Local-Only Privacy: No external API calls. Everything runs within your controlled environment using the pulled llama3 model from ollama, ensuring your documents remain private at all times.<br>
 Simple UI: Upload your file and view structured extracted data in one click.<br>
 Dockerized: Easy to deploy anywhere Docker is supported.<br>
 
-#### Note 
+### Note 
 The app is not currently publicly hosted. You can run it locally or in your private server. If publicly hosted in the future, all processing will still occur on the server side, safeguarding data privacy.<br>
 
-<br/>
+
 ### How It Works
 Home Page: The first screenshot (below) shows the initial home page before uploading a file.
 <img width="945" alt="Home Page" src="https://github.com/user-attachments/assets/d77fff68-657a-4547-90a0-1dd12e7cdbce" />
